@@ -1,0 +1,22 @@
+{% url 'home' as path_home %}
+{% url 'skills:my-skills' as path_my_skills %}
+{% url 'skills:all-skills' as path_all_skills %}
+{% url 'profiles:user-list' as path_users %}
+
+
+<div class="ui inverted segment">
+  <div class="ui inverted secondary pointing menu">
+    <a href={{ path_home }} class="item {% if request.path == path_home %}active{% endif %}">
+      Home
+    </a>
+    <a href={{ path_my_skills }} class="item {% if request.path == path_my_skills %}active{% endif %}">
+      My skills
+    </a>
+    <a href={{ path_all_skills }} class="item {% if request.path == path_all_skills %}active{% endif %}">
+      All skills
+    </a>
+    <a href={{ path_users }} class="item {% if request.path == path_users %}active{% endif %}">
+      Users
+    </a> 
+  </div>
+</div>

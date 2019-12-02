@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+
+{% block title %}my skills{% endblock title %}
+
+  
+{% block scripts %}
+<script>
+$(document).ready(function(){
+    var ctx = document.getElementById('myChart').getContext('2d');
+    var myChart = new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: [{% for item in qs %}'{{item.name}}',{% endfor %}],
+            datasets: [{
+                label: '# of points',
+                data: [{% for item in qs %}{{item.total}},{% endfor %}],
+                backgroundColor: 'rgba(44, 130, 201, 0.5)',
+                borderColor: 'rgba(0, 0, 0, 1)',
+                borderWidth: 1,
+            }]
+        },
+        options: {
+            scales: {
+                yAxes: [{
+                    ticks: {
+                        beginAtZero: true
+                    }
+                }]
+            }
+        }
+    });
+});
+</script>
+{% endblock scripts %}
+
+{% block content %}
+
+<canvas id="myChart" width="400" height="200"></canvas>
+
+{% endblock content %}

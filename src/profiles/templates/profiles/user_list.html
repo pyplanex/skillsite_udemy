@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block title %}user list{% endblock title %}
+
+{% block content %}
+
+<table class="ui single line table center aligned">
+  <thead>
+    <tr>
+      <th>Username</th>
+      <th>Joined date</th>
+      <th>Skills</th>
+    </tr>
+  </thead>
+  <tbody>
+  {% for obj in object_list %}
+    <tr>
+      <td>{{obj.name}}</td>
+      <td>{{obj.created|date}}</td>
+      <td>
+        <a href="{% url 'profiles:user-chart' obj.pk %}">
+        <button class="ui primary button">
+            See
+        </button>
+        </a>
+      </td>
+    </tr>
+{% endfor %}
+  </tbody>
+</table>
+
+{% endblock content %}

@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block title %}home{% endblock title %}
+
+{% block content %}
+<div class="ui icon message">
+  <i class="inbox icon"></i>
+  <div class="content">
+    <div class="header">
+      Do you have any questions?
+    </div>
+    <p>If so contact me on my emai: info@pyplane.com</p>
+  </div>
+</div>
+
+<div class="ui segment">
+    <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse eget varius felis. Vestibulum id leo sem. Nulla facilisi. Vivamus accumsan nibh sit amet consequat scelerisque. Pellentesque pulvinar risus nec nunc pellentesque pulvinar. Morbi non ullamcorper purus, a pellentesque nibh. Aenean dapibus enim quam, porttitor vehicula lectus faucibus ut. Etiam a tortor in neque volutpat tincidunt eu in eros. Suspendisse et congue metus. In congue tristique enim, rutrum imperdiet elit lobortis sed. In mi libero, commodo id volutpat sit amet, congue nec eros. Aenean nec convallis mauris.
+    </p>
+    <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse eget varius felis. Vestibulum id leo sem. Nulla facilisi. Vivamus accumsan nibh sit amet consequat scelerisque. Pellentesque pulvinar risus nec nunc pellentesque pulvinar. Morbi non ullamcorper purus, a pellentesque nibh. Aenean dapibus enim quam, porttitor vehicula lectus faucibus ut. Etiam a tortor in neque volutpat tincidunt eu in eros. Suspendisse et congue metus. In congue tristique enim, rutrum imperdiet elit lobortis sed. In mi libero, commodo id volutpat sit amet, congue nec eros. Aenean nec convallis mauris.
+    </p>
+    <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse eget varius felis. Vestibulum id leo sem. Nulla facilisi. Vivamus accumsan nibh sit amet consequat scelerisque. Pellentesque pulvinar risus nec nunc pellentesque pulvinar. Morbi non ullamcorper purus, a pellentesque nibh. Aenean dapibus enim quam, porttitor vehicula lectus faucibus ut. Etiam a tortor in neque volutpat tincidunt eu in eros. Suspendisse et congue metus. In congue tristique enim, rutrum imperdiet elit lobortis sed. In mi libero, commodo id volutpat sit amet, congue nec eros. Aenean nec convallis mauris.
+    </p>
+    <br>
+    <div class="sixteen wide column" style="text-align:center">
+        <a href="{% url 'skills:my-skills' %}">
+            <button class="massive primary ui button">
+                <i class="chart line icon"></i> My skills
+            </button>
+        </a>
+    </div>
+</div>
+{% endblock content %}

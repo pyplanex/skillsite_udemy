@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+
+{% block title %}user skills{% endblock title %}
+
+  
+{% block scripts %}
+<script>
+$(document).ready(function(){
+
+    getColor =() =>{
+        r = getColorRange(0,255)
+        g = getColorRange(0,255)
+        b = getColorRange(0,255)
+        op = 0.8
+        color = 'rgb(' + r + ',' + g + ',' + b + ',' + op + ')'
+        return color
+    }
+
+    getColorRange=(min, max)=>{
+        return Math.floor(Math.random() * (max-min)) + min
+    }
+    var ctx = document.getElementById('myChart').getContext('2d');
+    var myChart = new Chart(ctx, {
+        type: 'pie',
+        data: {
+            labels: [{% for item in qs %}'{{item.name}}',{% endfor %}],
+            datasets: [{
+                label: '# of Votes',
+                data: [{% for item in qs %}{{item.score}},{% endfor %}],
+                backgroundColor: [{% for item in qs %}getColor(),{% endfor %}],
+                borderColor: 'rgba(255, 159, 64, 1)',
+                borderWidth: 2,
+            }]
+        },
+        options: {
+            scales: {
+                yAxes: [{
+                    ticks: {
+                        beginAtZero: true
+                    }
+                }]
+            }
+        }
+    });
+});
+</script>
+{% endblock scripts %}
+
+{% block content %}
+    <canvas id="myChart" width="400" height="300"></canvas>
+{% endblock content %}
